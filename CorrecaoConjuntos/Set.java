@@ -1,3 +1,5 @@
+package CorrecaoConjuntos;
+
 public interface Set {
     boolean contains(Set element);
     boolean isSubset(Set set);

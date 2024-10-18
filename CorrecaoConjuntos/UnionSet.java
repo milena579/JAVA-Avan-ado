@@ -1,3 +1,5 @@
+package CorrecaoConjuntos;
+
 public class UnionSet implements Set {
 
     private Set setA;

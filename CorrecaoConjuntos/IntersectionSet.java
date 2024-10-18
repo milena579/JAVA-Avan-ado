@@ -1,3 +1,5 @@
+package CorrecaoConjuntos;
+
 public class IntersectionSet implements Set {
 
     private Set setA;

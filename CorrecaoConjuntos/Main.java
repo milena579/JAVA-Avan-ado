@@ -1,3 +1,5 @@
+package CorrecaoConjuntos;
+
 public class Main {
     public static void main(String[] args) {
         Set a = Sets.New(1.0, 2.0, 3.0);

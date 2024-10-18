@@ -1,3 +1,5 @@
+package CorrecaoConjuntos;
+
 public class Sets {
 
     public static Set New(Object... values) {
