@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.VerProduto">
+   <children>
+      <Pane prefHeight="666.0" prefWidth="789.0">
+         <children>
+            <TableView fx:id="produto" layoutX="47.0" layoutY="28.0" prefHeight="590.0" prefWidth="695.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nome" prefWidth="164.0" text="Nome" />
+                  <TableColumn fx:id="valor" prefWidth="127.0" text="Valor" />
+                <TableColumn fx:id="tipo" prefWidth="186.0" text="Tipo" />
+                  <TableColumn fx:id="editar" prefWidth="75.0" text="Editar" />
+                  <TableColumn fx:id="deletar" prefWidth="67.0" text="Deletar" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</VBox>

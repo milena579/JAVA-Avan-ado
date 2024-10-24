@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="728.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.MainSceneController">
+   <children>
+      <Pane prefHeight="886.0" prefWidth="990.0">
+         <children>
+            <AnchorPane fx:id="menu" prefHeight="87.0" prefWidth="990.0" style="-fx-background-color: #E3D9FF;">
+               <children>
+                  <Button fx:id="addItem" layoutX="75.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#addItem" prefHeight="25.0" prefWidth="110.0" text="Adicionar Item" />
+                  <Button fx:id="verItem" layoutX="826.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#verItem" text="Visualizar item" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tela" layoutY="87.0" prefHeight="642.0" prefWidth="990.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
