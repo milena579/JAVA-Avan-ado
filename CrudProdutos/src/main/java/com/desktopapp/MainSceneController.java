@@ -38,7 +38,6 @@ public class MainSceneController {
 
     @FXML
     public void addItem(MouseEvent e) throws  Exception{
-
         VBox item =  FXMLLoader.load(CadastroProdutos.class.getResource("ProdutoCadastro.fxml"));
         tela.setTopAnchor(item, 0.0);
         tela.setBottomAnchor(item, 0.0);

@@ -58,7 +58,7 @@ public class VerProduto implements Initializable{
         nome.setCellValueFactory(new PropertyValueFactory<>("name"));
         tipo.setCellValueFactory(new PropertyValueFactory<>("type"));
         valor.setCellValueFactory(new PropertyValueFactory<>("value"));
-        editar.setCellValueFactory(new PropertyValueFactory<>("btnDeletar"));
+        editar.setCellValueFactory(new PropertyValueFactory<>("btnEditar"));
         deletar.setCellValueFactory(new PropertyValueFactory<>("btnDeletar"));
 
         //var itemsTabela = FXCollections.observableArrayList(retornoTipo);
@@ -70,7 +70,6 @@ public class VerProduto implements Initializable{
         Context ctx = new Context();
         ctx.begin();
 
-        
         List<ProdutoData> lista = ctx.findAll(ProdutoData.class);
 
         List<ProdutoAcoes> buttons = lista.stream().map(n -> {

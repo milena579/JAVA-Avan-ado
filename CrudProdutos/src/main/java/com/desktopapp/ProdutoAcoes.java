@@ -61,9 +61,10 @@ public class ProdutoAcoes extends ProdutoData{
         this.btnEditar.setText("✏️");
         this.btnEditar.setOnAction((ActionEvent event) -> {
             try {
-                var crrStage = (Stage) btnEditar.getScene().getWindow();
-                crrStage.close();
-
+                var stage = new Stage();
+                var scene = EditarProduto.CreateScene(produto);
+                stage.setScene(scene);
+                stage.show();
 
             } catch (Exception e) {
                 // TODO: handle exception
