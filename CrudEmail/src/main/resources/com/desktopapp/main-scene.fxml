@@ -32,10 +32,10 @@
                   <TableView fx:id="caixaEntrada" layoutX="53.0" layoutY="50.0" prefHeight="496.0" prefWidth="857.0">
                      <columns>
                         <TableColumn id="id" fx:id="id" prefWidth="54.0" text="id" />
-                        <TableColumn id="endRemetente" fx:id="remetente" prefWidth="302.0" text="Remetente" />
-                        <TableColumn id="mensagem" fx:id="mensagem" prefWidth="332.0" text="Mensagem" />
-                        <TableColumn id=" verMsg" fx:id="verMsg" prefWidth="86.0" text="Ver" />
-                        <TableColumn id="excluirMsg" fx:id="excluirMsg" prefWidth="82.0" text="Excluir" />
+                        <TableColumn fx:id="remetente" prefWidth="302.0" text="Remetente" />
+                        <TableColumn fx:id="mensagem" prefWidth="332.0" text="Mensagem" />
+                        <TableColumn fx:id="verMsg" prefWidth="86.0" text="Ver" />
+                        <TableColumn  fx:id="excluirMsg" prefWidth="82.0" text="Excluir" />
                      </columns>
                   </TableView>
                </children></AnchorPane>

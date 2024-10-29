@@ -1,10 +1,15 @@
 package com.desktopapp;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
+import com.desktopapp.model.MensagemData;
 import com.desktopapp.model.UserData;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -61,22 +66,22 @@ public class MainSceneController implements Initializable {
     protected Button novaMensagem;
 
     @FXML 
-    protected TableView caixaEntrada;
+    protected TableView<BotoesMsg> caixaEntrada;
     
     @FXML
-    protected TableColumn id;
+    protected TableColumn<BotoesMsg, Long> id;
 
     @FXML
-    protected TableColumn remetente;
+    protected TableColumn<BotoesMsg, String> remetente;
 
     @FXML
-    protected TableColumn mensagem;
+    protected TableColumn<BotoesMsg, String>mensagem;
 
     @FXML
-    protected TableColumn verMsg;
+    protected TableColumn<BotoesMsg, Button> verMsg;
 
     @FXML
-    protected TableColumn excluirMsg;
+    protected TableColumn<BotoesMsg, Button> excluirMsg;
 
     @FXML
     public void novaMsg(MouseEvent e) throws Exception{
@@ -101,17 +106,29 @@ public class MainSceneController implements Initializable {
     
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        id.setCellFactory(new PropertyValueFactory<>("id"));
-        // VBox item =  FXMLLoader.load(VerMensagem.class.getResource("VerMensagem.fxml"));
-        // tela.setTopAnchor(item, 0.0);
-        // tela.setBottomAnchor(item, 0.0);
-        // tela.setLeftAnchor(item, 0.0);
-        // tela.setRightAnchor(item, 0.0);
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        remetente.setCellValueFactory(new PropertyValueFactory<>("remetente"));
+        mensagem.setCellValueFactory(new PropertyValueFactory<>("mensagem"));
 
-        // tela.getChildren().setAll(item);
+        caixaEntrada.setItems(listaMensagens());
+    }
+
+    protected ObservableList<BotoesMsg> listaMensagens() {
+        Context ctx = new Context();
+        ctx.begin();
+        List<MensagemData> lista = ctx.findAll(MensagemData.class);
+
+        List<BotoesMsg> buttons = lista.stream().map(n -> {
+            BotoesMsg btn = new BotoesMsg(n, caixaEntrada, this);
+            return btn;
+        })
+        .collect(Collectors.toList());
+
+        return FXCollections.observableArrayList(
+            buttons
+        );
     }
     
 }

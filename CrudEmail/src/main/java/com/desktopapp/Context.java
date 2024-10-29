@@ -2,7 +2,7 @@ package com.desktopapp;
 
 import java.util.*;
 
-import com.desktopapp.model.ProdutoData;
+import com.desktopapp.model.MensagemData;
 import com.desktopapp.model.UserData;
 
 import jakarta.persistence.EntityManager;
@@ -117,13 +117,13 @@ public class Context {
         throw new UnsupportedOperationException("Unimplemented method 'persist'");
     }
 
-    public void persist(ProdutoData produto){
+    public void persist(MensagemData mensagem){
         if (em == null) {
             System.out.println("connection is null.");
             return;
         }
         try {
-            em.persist(produto);
+            em.persist(mensagem);
         }
         catch (Exception e) {
             if (em.getTransaction().isActive()) {
